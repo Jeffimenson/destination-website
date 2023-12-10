@@ -1,9 +1,5 @@
-const name = 'James';
+import './style.css';
 
-const person = { first: name };
-console.log(person);
-const sayHelloLinting = (fName) => {
-    console.log(`Hello linting, ${fName}`);
-};
+const body = document.querySelector('body');
 
-sayHelloLinting(person.name);
+function createCard() {}
