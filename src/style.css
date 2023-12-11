@@ -5,9 +5,9 @@
 
 :root {
     --primary: #15683f;
-    --primary-fade: #aafac9;
-    --second: #bdd5ea;
-    --second-fade: #d5e2ec;
+    --primary-fade: rgb(148, 163, 153);
+    --second: #b4d9fa;
+    --second-fade: #cee3f3;
     --accent: #FFFFFF;
     --accent-alt: #959a9b; 
 }
@@ -19,6 +19,7 @@ html {
 
 body, html {
     height: 100%;
+    box-sizing: border-box;
 }
 
 * {
@@ -79,6 +80,12 @@ body {
     color: var(--primary-fade);
 }
 
+.basic-but:disabled {
+    background-color: var(--second-fade);
+    color: var(--primary-fade);
+
+}
+
 /* || Header */
 header { 
     display: grid;
@@ -87,7 +94,7 @@ header {
 
     height: 100px;
 
-    padding: 0 20px;
+    padding: 0 40px;
 
     width: 100%;
     box-sizing: border-box;
@@ -96,8 +103,14 @@ header {
     top: 0;
 
     color: var(--accent);
-    transition: background-color 400ms linear;
+    transition: background-color 400ms linear, top 100ms ease-in;
     z-index: 1;
+}
+
+header.hidden {
+    display: grid;
+    
+    top: -100px;
 }
 
 header:hover {
@@ -111,12 +124,12 @@ header:hover svg {
 
 .logo-container {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     align-items: center;
 }
 
 .logo {
-    width: 100px;      
+    width: 70px;      
 }
 
 .logo-container h1 {
@@ -204,6 +217,7 @@ section.hero video {
     display: flex;
     flex-direction: column;
     gap: 40px;
+
 }
 
 .latest-feed > h3 {
@@ -217,6 +231,7 @@ section.hero video {
     display: grid;
     grid-template-rows: auto 1fr;
     gap: 25px;
+
 }
 
 .arrow-holder {
@@ -233,7 +248,7 @@ section.hero video {
 
 .slider-frame {
     height: 500px;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Removing this makes everything shift to the right (i think cause it lets slider get super big */
 }
 
 .slider {
@@ -241,6 +256,8 @@ section.hero video {
     display: flex;
     gap: 20px;
     height: 100%;
+    transition: right 300ms linear; 
+    right: 0%;
 }
 
 .card {

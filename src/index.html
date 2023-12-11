@@ -8,7 +8,10 @@
 <body>
     <header>
         <div class="logo-container">
-            <img src="./dest-logo.png" alt="Logo" class="logo"> 
+            <!-- <img src="./dest-logo.png" alt="Logo" class="logo">  -->
+            <svg class="logo" viewbox="0 0 24 24"> <!-- Need to declare viewbox here also or else scaling wont work -->
+                <use href="#city-svg"></use>
+            </svg>
             <h1>Visit Jeffenland</h1>
         </div>
         <div class="header-links">
@@ -55,16 +58,7 @@
                     <button class="forward basic-but">&gt</button>
                 </div>
                 <div class="slider-frame">
-                    <div class="slider">
-                        <div class="card">
-                            <div class="img-holder">
-                                <img src="https://images.pexels.com/photos/1266810/pexels-photo-1266810.jpeg?auto=compress&cs=tinysrgb&w=600" alt="pretty picture">
-                                <button class="basic-but"> + </button>
-                            </div>
-                            <h3>Something something</h3>
-                            <p>The long but smaller something under the something which makes you interested in the something</p>
-                        </div>
-                    </div>
+                    <div class="slider"></div>
                 </div>
             </div>
         </section>
@@ -73,6 +67,12 @@
     <footer></footer>
 
     <!-- SVG hreferences -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <symbol id="city-svg">
+            <title>city</title>
+            <path d="M19,15H17V13H19M19,19H17V17H19M13,7H11V5H13M13,11H11V9H13M13,15H11V13H13M13,19H11V17H13M7,11H5V9H7M7,15H5V13H7M7,19H5V17H7M15,11V5L12,2L9,5V7H3V21H21V11H15Z" />
+        </symbol>
+    </svg>
     <svg class="hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 24 24">  
         <symbol id="globe-svg">
             <title>web</title>
