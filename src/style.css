@@ -64,6 +64,11 @@ svg {
     width: 30px;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .hidden {
     display: none;
 } 
@@ -109,7 +114,7 @@ header {
 
     color: var(--accent);
     transition: background-color 400ms linear, top 100ms ease-in, color 400ms linear;
-    z-index: 1;
+    z-index: 4;
 }
 
 header.hidden {
@@ -125,7 +130,6 @@ header:hover {
 
 header:hover svg {
     fill: black;
-    transition: fill 400ms linear;
 }
 
 
@@ -172,20 +176,127 @@ header svg {
 
 .nav-icons {
     display: flex;
-    gap: 60px;
+    gap: 40px;
     align-items: center;
     justify-self: right;
 }
 
-.language-handler {
+.nav-icons button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+    border-radius: 4px;
+}
+
+.nav-icons button:hover {
+    background-color: var(--second);
+}
+
+.nav-icons button:hover svg {
+    fill: var(--primary);
+}
+
+.nav-icons button#lang-toggle {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-header:hover .language-handler {
+
+header:hover button#lang-toggle span{
     color: var(--primary);
     font-weight: 700;
+} 
+/****/
+
+/* || dropdown menu */
+.menu {
+    position: fixed;
+    z-index: 3;
+
+    box-sizing: border-box;
+    height: 100svh;
+    width: 100svw;
+
+    display: flex;
 }
+
+.menu section.one {
+    box-sizing: border-box;
+    width: 30%;
+    height: 100%;
+    background-color: white;
+    padding: 160px 140px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.menu section.one .big-links {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    font-size: 2rem;
+}
+
+.menu section.one .big-links li {
+    position: relative;
+    height: 50px;
+}
+
+.menu section.one .big-links li:hover {
+    font-weight: bold;
+}
+
+.menu section.one .big-links li::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: var(--primary);
+    transition: width 20ms linear;
+}
+
+.menu section.one .big-links li:hover::after {
+    content: "";
+    display: block;
+    width: 160px;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: var(--primary);
+}
+
+.menu section.one .small-links li:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.menu section.two {
+    width: 20%;
+    box-sizing: border-box;
+    left: 30%;
+    padding: 160px 90px;
+    background-color: var(--second-light);
+    height: 100%;
+}
+
+.menu section.two .sub-links {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.menu section.two .sub-links .arrow {
+    color: var(--primary);
+}
+
 /****/
 
 main {

@@ -34,8 +34,8 @@ const cardsPerSlide = 4;
 createCards(cardCount);
 createSlider(sliderForward, sliderBack, slider, cardCount, cardsPerSlide);
 
+// hide header on scroll code
 const header = query('header');
-
 let lastKnownScrollPosition;
 document.addEventListener('scroll', () => {
     lastKnownScrollPosition = window.scrollY;
@@ -44,4 +44,10 @@ document.addEventListener('scroll', () => {
     } else {
         header.classList.remove('hidden');
     }
+});
+
+// return to top
+const topper = query('.topper');
+topper.addEventListener('click', () => {
+    window.scroll(0, 0);
 });

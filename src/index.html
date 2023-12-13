@@ -6,6 +6,29 @@
     <title>Visit Jeffenland</title>
 </head>
 <body>
+    <div class="menu">
+        <section class="one">
+            <ul class="big-links">
+                <li><a href="#">First Big link</a></li>
+                <li><a href="#">Second Big link</a></li>
+                <li><a href="#">Third Big link</a></li>
+            </ul>
+            <ul class="small-links">
+                <li><a href="#">smol links</a></li>
+                <li><a href="#">smol links</a></li>
+                <li><a href="#">smol links</a></li>
+            </ul>
+        </section>
+        <section class="two">
+            <ul class="sub-links">
+                <li><a href="#">Sub links</a> <span class="arrow">→</span></li>
+                <li><a href="#">Sub links</a> <span class="arrow">→</span></li>
+                <li><a href="#">Sub links</a> <span class="arrow">→</span></li>
+                <li><a href="#">Sub links</a> <span class="arrow">→</span></li>
+                <li><a href="#">Sub links</a> <span class="arrow">→</span></li>
+            </ul>
+        </section>
+    </div>
     <header>
         <div class="logo-container">
             <img src="./assets/dest-logo.png" alt="Logo" class="logo"> 
@@ -17,14 +40,12 @@
             <a href="#">Travel Tips</a>
         </div>
         <div class="nav-icons">
-            <div class="language-handler">
+            <button id="lang-toggle">
                 <span>EN</span>
-                <button id="lang-toggle">
-                    <svg class="lang-icon" viewbox="0 0 24 24"> <!-- Need to declare viewbox here also or else scaling wont work -->
-                        <use href="#globe-svg"></use>
-                    </svg>
-                </button>
-            </div>
+                <svg class="lang-icon" viewbox="0 0 24 24"> <!-- Need to declare viewbox here also or else scaling wont work -->
+                    <use href="#globe-svg"></use>
+                </svg>
+            </button>
             <button id="search">
                 <svg class="search-icon" viewbox="0 0 24 24">
                     <use href="#magnifier-svg"></use>
