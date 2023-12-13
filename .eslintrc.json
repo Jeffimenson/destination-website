@@ -12,7 +12,8 @@
         "ecmaVersion": "latest"
     },
     "rules": { 
-        "no-console": "off"//,
+        "no-console": "off", 
+        "no-param-reassign": "off"//,
         // "quotes": [ // Some rules have multiple inputs
         //     "error",
         //     "double"

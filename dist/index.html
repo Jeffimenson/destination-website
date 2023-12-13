@@ -8,10 +8,7 @@
 <body>
     <header>
         <div class="logo-container">
-            <!-- <img src="./dest-logo.png" alt="Logo" class="logo">  -->
-            <svg class="logo" viewbox="0 0 24 24"> <!-- Need to declare viewbox here also or else scaling wont work -->
-                <use href="#city-svg"></use>
-            </svg>
+            <img src="a1eafd2608fce20dc7ae.png" alt="Logo" class="logo"> 
             <h1>Visit Jeffenland</h1>
         </div>
         <div class="header-links">
@@ -43,17 +40,18 @@
     <main>
         <section class="hero">
             <video autoplay muted loop>
-                <source src="1478f82494c517835ac6.mp4" type="video/mp4" /> 
+                <source src="204282fce0a2ae1b1041.mp4" type="video/mp4" /> 
             </video>
+            <div class="tinter"></div>
             <div class="hero-text">
                 <h2>Awesomeness - It's in our blood.</h2>
                 <h1>Yeah, it's the greatest place in the world.</h1>
             </div>
         </section>
         <section class="latest-feed">
-            <h3>Latest</h3>
+            <h3>Latest and Greatest</h3>
             <div class="container">
-                <div class="arrow-holder">
+                <div class="arrow-holder"> 
                     <button class="back basic-but">&lt</button>
                     <button class="forward basic-but">&gt</button>
                 </div>
@@ -64,10 +62,48 @@
         </section>
 
     </main>
-    <footer></footer>
+    <footer>
+        <div class="logo-container">
+            <img src="a1eafd2608fce20dc7ae.png" alt="Logo" class="logo"> 
+            <h1>Visit Jeffenland</h1>
+        </div>
+        <ul class="opportunities">
+            <li>Do stuff with us</li>
+            <li>Stuff</li>
+            <li>Stuff</li>
+            <li>Stuff</li>
+        </ul>
+        <div class="socials">
+            <h3>Socials</h3>
+            <div class="social-links">
+                <svg class="social-icon" viewbox="0 0 24 24">
+                    <use href="#facebook-svg"></use>
+                </svg>
+                <svg class="social-icon x" viewbox="0 0 512 512">
+                    <use href="#x-svg"></use>
+                </svg>
+                <svg class="social-icon" viewbox="0 0 24 24">
+                    <use href="#yt-svg"></use>
+                </svg>
+            </div>
+        </div>
+        <div class="boring-stuff">
+            <span class="copyright-text">@Gimena-Corp</span>
+            <ul class="boring-links">
+                <li>link</li>
+                <li>link</li>
+                <li>link</li>
+                <li>link</li>
+                <li>link</li>
+            </ul>
+            <button class="topper">
+                Back to top ↑
+            </button>
+        </div>
+    </footer>
 
     <!-- SVG hreferences -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    <svg class="hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
         <symbol id="city-svg">
             <title>city</title>
             <path d="M19,15H17V13H19M19,19H17V17H19M13,7H11V5H13M13,11H11V9H13M13,15H11V13H13M13,19H11V17H13M7,11H5V9H7M7,15H5V13H7M7,19H5V17H7M15,11V5L12,2L9,5V7H3V21H21V11H15Z" />
@@ -91,6 +127,23 @@
             <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
         </symbol>
     </svg>
-    
+    <svg class="hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <symbol id="facebook-svg">
+            <title>facebook</title>
+            <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z" />
+        </symbol>
+    </svg>
+    <svg class="hidden" xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512">
+        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+        <symbol id="x-svg">
+            <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/>
+        </symbol>
+    </svg>
+    <svg class="hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <symbol id="yt-svg">
+            <title>youtube</title>
+            <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z" />
+        </symbol>
+    </svg>
 </body>
 </html>

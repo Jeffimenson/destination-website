@@ -1,13 +1,15 @@
 @font-face {
     font-family: 'Quicksand';
-    src: url('Quicksand-VariableFont_wght.ttf') format('truetype');
+    src: url('./assets/Quicksand-VariableFont_wght.ttf') format('truetype');
 }
 
 :root {
     --primary: #15683f;
-    --primary-fade: rgb(148, 163, 153);
-    --second: #b4d9fa;
-    --second-fade: #cee3f3;
+    --primary-light: #3a805d;
+    --primary-fade: #77a085;
+    --second: #d1e8fc;
+    --second-light: #d9ebfc;
+    --second-fade: #ebf5fd;
     --accent: #FFFFFF;
     --accent-alt: #959a9b; 
 }
@@ -17,9 +19,8 @@ html {
     font-size: 18px;
 }
 
-body, html {
+body {
     height: 100%;
-    box-sizing: border-box;
 }
 
 * {
@@ -55,6 +56,10 @@ button:active, input:active, label:active{
     color-scheme: var(--pip-darkened);
 } */
 
+ul {
+    list-style: none;
+}
+
 svg {
     width: 30px;
 }
@@ -76,11 +81,11 @@ body {
 }
 
 .basic-but:hover {
-    background-color: var(--second-fade);
-    color: var(--primary-fade);
+    background-color: var(--second-light);
+    color: var(--primary-light);
 }
 
-.basic-but:disabled {
+.basic-but:disabled, .basic-but:active {
     background-color: var(--second-fade);
     color: var(--primary-fade);
 
@@ -103,7 +108,7 @@ header {
     top: 0;
 
     color: var(--accent);
-    transition: background-color 400ms linear, top 100ms ease-in;
+    transition: background-color 400ms linear, top 100ms ease-in, color 400ms linear;
     z-index: 1;
 }
 
@@ -120,16 +125,18 @@ header:hover {
 
 header:hover svg {
     fill: black;
+    transition: fill 400ms linear;
 }
+
 
 .logo-container {
     display: flex;
-    gap: 15px;
+    gap: 5px;
     align-items: center;
 }
 
 .logo {
-    width: 70px;      
+    width: 110px;      
 }
 
 .logo-container h1 {
@@ -149,12 +156,18 @@ header svg {
 
 .header-links a {
     text-decoration: none;
+    width: 130px;
     color: inherit;
     box-sizing: border-box;
+    text-align: center;
+
 }
 
 .header-links a:hover {
-    text-shadow: 0.2px 0px 0px black, -0.2px 0px 0px black;
+    /* text-shadow: 0.8px 0px 0px black, -0.8px 0px 0px black;
+    letter-spacing: 1px; */
+
+    font-weight: bolder;
 }
 
 .nav-icons {
@@ -167,7 +180,11 @@ header svg {
 .language-handler {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
+}
+header:hover .language-handler {
+    color: var(--primary);
+    font-weight: 700;
 }
 /****/
 
@@ -189,9 +206,19 @@ section.hero {
 section.hero video {
     position: absolute;
     object-fit: cover;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+}
+
+section.hero .tinter {
+    position: absolute;
+    object-fit: cover;
     z-index: -1;
     width: 100%;
     height: 100%;
+
+    background-color: #27272756;
 }
 
 .hero-text {
@@ -200,14 +227,16 @@ section.hero video {
     gap: 30px;
 
     text-align: center;
+    align-items: center;
 }
 
 .hero-text h2 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 
 .hero-text h1 {
-    font-size: 2rem;
+    font-size: 4rem;
+    width: 70%;
 }
 /****/
 
@@ -221,8 +250,8 @@ section.hero video {
 }
 
 .latest-feed > h3 {
-    border-top: 2px solid var(--accent-alt);
-    width: 180px;
+    border-top: 1px solid var(--accent-alt);
+    width: 400px;
     padding-top: 30px;
     font-size: 2rem;
 }
@@ -297,4 +326,72 @@ section.hero video {
 .card h3, .card p {
     margin: 0 20px;
     width: 80%;
+}
+
+/* || Footer */ 
+footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr auto;
+    gap: 55px;
+
+    padding: 40px 17%;
+
+    background-color: var(--second);
+}
+
+footer > ul li:first-child, footer .socials h3 {
+    font-weight: 700;
+    font-size: inherit;
+    margin-bottom: 15px;
+}
+
+footer .logo-container {
+    grid-row: 1 / 2;
+    grid-column: 1 / 1;
+}
+
+footer .opportunities {
+    grid-row: 1 / 2;
+}
+
+footer .socials {
+    grid-row: 1 / 2;
+}
+
+.socials .social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon.x {
+    width: 25px;
+}
+
+footer .boring-stuff {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .boring-stuff .boring-links {
+    flex: 2; 
+
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+}
+
+.topper {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.topper:hover {
+    color: var(--primary-light);
+}
+
+.topper:active {
+    color: var(--primary-fade);
 }
