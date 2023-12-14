@@ -46,6 +46,18 @@ document.addEventListener('scroll', () => {
     }
 });
 
+// menu toggle
+const menuToggler = query('#toggle-menu');
+const menu = query('.menu');
+const regSVG = query('.menu-icon', menuToggler);
+const closeSVG = query('.close-menu-icon', menuToggler);
+menuToggler.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+
+    regSVG.classList.toggle('hidden');
+    closeSVG.classList.toggle('hidden');
+});
+
 // return to top
 const topper = query('.topper');
 topper.addEventListener('click', () => {
