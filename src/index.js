@@ -2,6 +2,8 @@ import './style.css';
 import { query, make } from './jeffQuery.js';
 import createSlider from './slider.js';
 
+// const body = query('body');
+
 const slider = query('.slider');
 const sliderForward = query('.arrow-holder .forward');
 const sliderBack = query('.arrow-holder .back');
@@ -32,7 +34,13 @@ const cardCount = 16;
 const cardsPerSlide = 4;
 
 createCards(cardCount);
-createSlider(sliderForward, sliderBack, slider, cardCount, cardsPerSlide);
+const sliderHandler = createSlider(
+    sliderForward,
+    sliderBack,
+    slider,
+    cardCount,
+    cardsPerSlide
+);
 
 // hide header on scroll code
 const header = query('header');
@@ -63,3 +71,19 @@ const topper = query('.topper');
 topper.addEventListener('click', () => {
     window.scroll(0, 0);
 });
+
+// mobile
+// const navIcons = query('.nav-icons');
+
+const mediaQuery = window.matchMedia('(max-width: 600px)');
+const mobileChecker = (e) => {
+    if (e.matches) {
+        sliderHandler.changeCPS(1);
+    } else {
+        sliderHandler.changeCPS(cardsPerSlide);
+    }
+};
+if (mediaQuery.matches) {
+    mobileChecker({ matches: true });
+}
+mediaQuery.addEventListener('change', mobileChecker);

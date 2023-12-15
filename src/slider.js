@@ -14,7 +14,7 @@ export default function createSlider(
     cardsPerSlide
 ) {
     const minSlide = 0;
-    const maxSlide = cardCount / cardsPerSlide;
+    let maxSlide = cardCount / cardsPerSlide;
 
     let currSlide = 0;
 
@@ -35,4 +35,14 @@ export default function createSlider(
     });
 
     updateButtons(nextButton, backButton, currSlide, maxSlide, minSlide);
+
+    const changeCPS = (cardsPerS) => {
+        maxSlide = cardCount / cardsPerS;
+        sliderElm.style.width = `calc(100% * ${maxSlide})`;
+        updateButtons(nextButton, backButton, currSlide, maxSlide, minSlide);
+    };
+
+    return {
+        changeCPS,
+    };
 }
